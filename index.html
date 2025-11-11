@@ -6,181 +6,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Pembelajaran Interaktif</title>
     <style>
-       body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #129eea;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #129eea;
+        }
 
-    /* ===== HEADER ===== */
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: linear-gradient(90deg, #26d994, #aebb66);
-        padding: 10px 20px;
-        color: #fff;
-        position: fixed;
-        width: 100%;
-        z-index: 100;
-        flex-wrap: wrap;
-    }
-
-    /* Logo */
-    header .logo {
-        display: flex;
-        align-items: center;
-    }
-
-    header .logo img {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
-    }
-
-    header .logo h1 {
-        font-size: 20px;
-        margin: 0;
-    }
-
-    /* Tombol menu (hamburger) untuk mobile */
-    .menu-toggle {
-        display: none;
-        font-size: 26px;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    /* Navigasi utama */
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 10px;
-    }
-
-    nav .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropbtn {
-        background: transparent;
-        border: none;
-        color: #fff;
-        font-size: 16px;
-        padding: 10px 15px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .dropbtn:hover {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 5px;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background: #66BB6A;
-        min-width: 150px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        z-index: 100;
-        border-radius: 5px;
-    }
-
-    .dropdown-content a {
-        color: white;
-        padding: 10px 15px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {
-        background: #4CAF50;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    /* ====== RESPONSIVE AREA ====== */
-    @media (max-width: 768px) {
         header {
-            flex-wrap: nowrap;
-        }
-
-        .menu-toggle {
-            display: block;
-        }
-
-        nav {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            background: rgba(38, 217, 148, 0.95);
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-
-        nav.active {
             display: flex;
-        }
-
-        .dropbtn {
+            align-items: center;
+            justify-content: left;
+            background: linear-gradient(90deg, #26d994, #aebb66);
+            padding: 10px 20px;
+            color: rgb(255, 255, 255);
+            position: fixed;
             width: 100%;
-            text-align: left;
-            padding: 10px 15px;
+            z-index: 100;
+            flex-wrap: wrap;
         }
 
-        .dropdown-content {
-            position: static;
-            background: rgba(102, 187, 106, 0.9);
-            box-shadow: none;
-            width: 100%;
-        }
-
-        .dropdown-content a {
-            padding: 10px;
+        header .logo {
+            display: flex;
+            align-items: center;
         }
 
         header .logo img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
         }
 
         header .logo h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: transparent;
+            border: none;
+            color: rgb(248, 249, 242);
+            font-size: 16px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dropbtn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #66BB6A;
+            min-width: 150px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background: #4CAF50;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .content {
+            display: none;
+            padding: 120px 20px 20px 20px;
+            min-height: 100vh;
+            background: #f4f4f4;
+            transition: opacity 0.3s;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 10px auto;
+            line-height: 1.6;
             font-size: 16px;
         }
-    }
 
-    /* Konten halaman */
-    .content {
-        display: none;
-        padding: 120px 20px 20px 20px;
-        min-height: 100vh;
-        background: #f4f4f4;
-        transition: opacity 0.3s;
-    }
+        @media(max-width:768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    .content.active {
-        display: block;
-    }
+            nav {
+                width: 100%;
+            }
 
-    h2 {
-        text-align: center;
-        margin-top: 0;
-    }
-
-    p {
-        max-width: 800px;
-        margin: 10px auto;
-        line-height: 1.6;
-        font-size: 16px;
-    }
+            .dropdown-content {
+                position: relative;
+            }
+        }
     </style>
 </head>
 
